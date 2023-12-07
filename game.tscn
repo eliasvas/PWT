@@ -4,6 +4,6 @@
 
 [node name="Game" type="Node2D"]
 
-[node name="Icon" type="Sprite2D" parent="."]
+[node name="Player" type="Sprite2D" parent="."]
 position = Vector2(413, 293)
 texture = ExtResource("1_x12mo")
