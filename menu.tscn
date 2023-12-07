@@ -1,0 +1,66 @@
+[gd_scene load_steps=5 format=3 uid="uid://jmaeldtngrr6"]
+
+[ext_resource type="Theme" uid="uid://c0vl6lqucrvs8" path="res://theme.tres" id="1_jx4wi"]
+[ext_resource type="Texture2D" uid="uid://bpoqm5bqn5mks" path="res://home_toilet.png" id="2_m0xgy"]
+[ext_resource type="Texture2D" uid="uid://bp4b7s8pth5vs" path="res://pommel_up.png" id="2_tvjj2"]
+[ext_resource type="Script" path="res://FlushButton.gd" id="3_l7sdb"]
+
+[node name="Menu" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="GridContainer" type="GridContainer" parent="CanvasLayer"]
+offset_left = 258.0
+offset_top = 187.0
+offset_right = 639.0
+offset_bottom = 381.0
+theme = ExtResource("1_jx4wi")
+columns = 2
+
+[node name="StartGame" type="TextureRect" parent="CanvasLayer/GridContainer"]
+layout_mode = 2
+texture = ExtResource("2_tvjj2")
+expand_mode = 3
+stretch_mode = 4
+script = ExtResource("3_l7sdb")
+
+[node name="Start" type="Label" parent="CanvasLayer/GridContainer"]
+layout_mode = 2
+text = "Start"
+
+[node name="ShowCredits" type="TextureRect" parent="CanvasLayer/GridContainer"]
+layout_mode = 2
+texture = ExtResource("2_tvjj2")
+expand_mode = 3
+stretch_mode = 4
+script = ExtResource("3_l7sdb")
+
+[node name="Credits" type="Label" parent="CanvasLayer/GridContainer"]
+layout_mode = 2
+text = "Credits"
+
+[node name="QuitGame" type="TextureRect" parent="CanvasLayer/GridContainer"]
+layout_mode = 2
+texture = ExtResource("2_tvjj2")
+expand_mode = 3
+stretch_mode = 4
+script = ExtResource("3_l7sdb")
+
+[node name="Quit" type="Label" parent="CanvasLayer/GridContainer"]
+layout_mode = 2
+text = "Quit"
+
+[node name="HomeToilet" type="Sprite2D" parent="."]
+position = Vector2(400, 302)
+scale = Vector2(0.554167, 0.555556)
+texture = ExtResource("2_m0xgy")
+
+[connection signal="gui_input" from="CanvasLayer/GridContainer/StartGame" to="CanvasLayer/GridContainer/StartGame" method="_on_gui_input"]
+[connection signal="mouse_entered" from="CanvasLayer/GridContainer/StartGame" to="CanvasLayer/GridContainer/StartGame" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/GridContainer/StartGame" to="CanvasLayer/GridContainer/StartGame" method="_on_mouse_exited"]
+[connection signal="gui_input" from="CanvasLayer/GridContainer/ShowCredits" to="CanvasLayer/GridContainer/ShowCredits" method="_on_gui_input"]
+[connection signal="mouse_entered" from="CanvasLayer/GridContainer/ShowCredits" to="CanvasLayer/GridContainer/ShowCredits" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/GridContainer/ShowCredits" to="CanvasLayer/GridContainer/ShowCredits" method="_on_mouse_exited"]
+[connection signal="gui_input" from="CanvasLayer/GridContainer/QuitGame" to="CanvasLayer/GridContainer/QuitGame" method="_on_gui_input"]
+[connection signal="mouse_entered" from="CanvasLayer/GridContainer/QuitGame" to="CanvasLayer/GridContainer/QuitGame" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/GridContainer/QuitGame" to="CanvasLayer/GridContainer/QuitGame" method="_on_mouse_exited"]
