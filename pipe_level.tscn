@@ -1,16 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://drafu4p0wyln0"]
+[gd_scene load_steps=3 format=3 uid="uid://drafu4p0wyln0"]
 
 [ext_resource type="Script" path="res://PipeLogic.gd" id="1_bv3v2"]
-[ext_resource type="Texture2D" uid="uid://cjnjce4j1h6fo" path="res://pipe_background.png" id="1_whqex"]
 [ext_resource type="PackedScene" uid="uid://d0i5m26pos1e2" path="res://water_sprinkler.tscn" id="2_fwgpy"]
 
 [node name="PipeLevel" type="Node2D"]
 script = ExtResource("1_bv3v2")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(405, 298)
-scale = Vector2(0.556597, 0.554167)
-texture = ExtResource("1_whqex")
 
 [node name="WaterSprinkler3" parent="." instance=ExtResource("2_fwgpy")]
 position = Vector2(527, 228)

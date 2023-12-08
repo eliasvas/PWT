@@ -1,7 +1,5 @@
 extends Node2D
 
-var curs = preload("res://drag_cursor.png")
-
 func _ready():
 	CustomCursor.load_cursor("cursor_idle", "cursor_pressed", 0.8)
 	TransitionScene.change_scene_instant('res://menu.tscn')

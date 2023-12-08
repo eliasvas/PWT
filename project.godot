@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 TransitionScene="*res://transition_scene.tscn"
 CustomCursor="*res://custom_cursor.tscn"
+BackgroundImage="*res://background_image.tscn"
 
 [display]
 

@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://bb30qsp2mv8ha"]
+
+[ext_resource type="Script" path="res://background_image.gd" id="1_gqlmi"]
+[ext_resource type="Texture2D" uid="uid://cxbh13w7ttiah" path="res://pipe0.png" id="2_h52ge"]
+
+[node name="BackgroundImage" type="Node2D"]
+editor_description = "It makes a background image, it centers and scales it to fit all the screen"
+script = ExtResource("1_gqlmi")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture_filter = 2
+texture = ExtResource("2_h52ge")
