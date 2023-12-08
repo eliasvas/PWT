@@ -23,11 +23,12 @@ func _on_gui_input(event):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 		_handle_button_click()
 		texture = pressed_texture
-	
 
 func handle_action(action):
 	if action == "QuitGame":
-		get_tree().quit()
+		TransitionScene.fade_n_exit()
+	elif action == "ShowOptions":
+		TransitionScene.change_scene('res://menu.tscn')
 
 func _handle_button_click():
 	print("Button clicked!")
