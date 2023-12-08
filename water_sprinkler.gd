@@ -10,11 +10,14 @@ func _process(delta):
 	if (level_ended):return
 	_get_mouse_state()
 	if (time_fixing > 0.5):
+		$nut.visible = false
 		print("fixed!!")
 		$AnimatedSprite2D.play("fixed")
 		level_ended = true
 	if mouse_state == MOUSE_DOWN && collider_state == INSIDE_COLLIDER:
 		#print("inside!!!")
+		$nut.visible = true
+		$nut.rotate(delta * 40)
 		time_fixing+=delta
 	if prev_mouse_state == MOUSE_UP && mouse_state == MOUSE_DOWN && collider_state == INSIDE_COLLIDER:
 		$AnimatedSprite2D.play("default")
@@ -39,10 +42,12 @@ func _get_mouse_state():
 func _on_mouse_entered():
 	collider_state = INSIDE_COLLIDER
 func _on_mouse_exited():
+	$nut.visible = false
 	collider_state = OUTSIDE_COLLIDER
 
 
 func _on_timer_timeout():
+	$nut.visible = false
 	print("sprinkler timer timeout!")
 	if !level_ended:
 		level_ended = true

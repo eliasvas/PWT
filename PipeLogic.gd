@@ -10,8 +10,8 @@ func _ready():
 	var second_to_kill = first_to_kill
 	while second_to_kill == first_to_kill:
 		second_to_kill = rng.randi() % 3
-	get_node(sprinklers[first_to_kill]).queue_free()
-	get_node(sprinklers[second_to_kill]).queue_free()
+	#get_node(sprinklers[first_to_kill]).queue_free()
+	#get_node(sprinklers[second_to_kill]).queue_free()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
