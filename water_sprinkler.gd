@@ -1,8 +1,11 @@
 extends Area2D
 
 # Called when the node enters the scene tree for the first time.
+#var max_particles
 func _ready():
-	$AnimatedSprite2D.play("light_sprinkle")
+	pass
+	#max_particles = $CPUParticles2D.amount
+	#$AnimatedSprite2D.play("light_sprinkle")
 
 var time_fixing = 0.0;
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -12,17 +15,17 @@ func _process(delta):
 	if (time_fixing > 0.5):
 		$nut.visible = false
 		print("fixed!!")
-		$AnimatedSprite2D.play("fixed")
 		level_ended = true
+		$CPUParticles2D.visible = false
 	if mouse_state == MOUSE_DOWN && collider_state == INSIDE_COLLIDER:
-		#print("inside!!!")
 		$nut.visible = true
 		$nut.rotate(delta * 40)
 		time_fixing+=delta
 	if prev_mouse_state == MOUSE_UP && mouse_state == MOUSE_DOWN && collider_state == INSIDE_COLLIDER:
-		$AnimatedSprite2D.play("default")
-	if collider_state == OUTSIDE_COLLIDER:
-		$AnimatedSprite2D.play("light_sprinkle")
+		print("just pressed!")
+		#$AnimatedSprite2D.play("default")
+	#if collider_state == OUTSIDE_COLLIDER:
+		#$AnimatedSprite2D.play("light_sprinkle")
 	
 
 enum {MOUSE_UP, MOUSE_DOWN}
@@ -51,11 +54,14 @@ func _on_timer_timeout():
 	print("sprinkler timer timeout!")
 	if !level_ended:
 		level_ended = true
-		$AnimatedSprite2D.play("heavy_sprinkle")
-		await $AnimatedSprite2D.animation_looped
 		print("Back to title!")
-		TransitionScene.change_scene('res://menu.tscn')
+		#send correct signals
+		$CPUParticles2D.amount *= 50.0
+		#await get_tree().create_timer(2).timeout
+		#TransitionScene.change_scene('res://menu.tscn')
+		
+		var parent = get_parent()
+		parent.emit_signal("spinklerFail")
 	else:
-		$AnimatedSprite2D.play("fixed")
-		await $AnimatedSprite2D.animation_looped
-		TransitionScene.change_scene('res://pipe_level.tscn')
+		var parent = get_parent()
+		parent.emit_signal("spinklerSuccess")

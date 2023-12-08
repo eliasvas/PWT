@@ -7,17 +7,20 @@
 script = ExtResource("1_bv3v2")
 
 [node name="WaterSprinkler3" parent="." instance=ExtResource("2_fwgpy")]
-position = Vector2(527, 228)
+position = Vector2(657, 452)
 rotation = -1.54723
 
 [node name="WaterSprinkler4" parent="." instance=ExtResource("2_fwgpy")]
-position = Vector2(325, 201)
+position = Vector2(226, 405)
 rotation = 0.215203
 
 [node name="WaterSprinkler2" parent="." instance=ExtResource("2_fwgpy")]
-position = Vector2(528, 265)
+position = Vector2(688, 166)
 rotation = -2.87267
 scale = Vector2(3, 3)
 
 [node name="WaterSprinkler1" parent="." instance=ExtResource("2_fwgpy")]
-position = Vector2(371, -30)
+position = Vector2(379, 249)
+
+[connection signal="spinklerFail" from="." to="." method="_on_spinkler_fail"]
+[connection signal="spinklerSuccess" from="." to="." method="_on_spinkler_success"]
