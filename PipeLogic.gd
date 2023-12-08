@@ -25,7 +25,7 @@ func _on_spinkler_success():
 	successes_needed -= 1
 	if successes_needed == 0:
 		await get_tree().create_timer(0.5).timeout
-		TransitionScene.change_scene('res://pipe_level.tscn')
+		TransitionScene.change_scene('res://bonk_level.tscn')
 
 
 func _on_spinkler_fail():
