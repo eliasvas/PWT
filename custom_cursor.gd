@@ -15,11 +15,11 @@ func load_cursor(idle_image : String, clicked_image : String):
 	idle_image_m = load(idle_image)
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	$Sprite2D.position = get_viewport().get_mouse_position()
-	$Sprite2D.scale = Vector2(scaleX, scaleY)
+	$CanvasLayer/Sprite2D.position = get_viewport().get_mouse_position()
+	$CanvasLayer/Sprite2D.scale = Vector2(scaleX, scaleY)
 	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
-		$Sprite2D.texture = clicked_image_m
+		$CanvasLayer/Sprite2D.texture = clicked_image_m
 	else:
-		$Sprite2D.texture = idle_image_m
+		$CanvasLayer/Sprite2D.texture = idle_image_m
 		
 

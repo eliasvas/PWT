@@ -4,8 +4,11 @@
 [ext_resource type="Texture2D" uid="uid://dmfphuuais55u" path="res://drag_cursor.png" id="2_553sf"]
 
 [node name="CustomCursor" type="Node2D"]
-z_index = 10
+z_as_relative = false
 script = ExtResource("1_xcmvk")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer"]
 texture = ExtResource("2_553sf")

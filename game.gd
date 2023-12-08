@@ -9,4 +9,6 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	if Input.is_key_pressed(KEY_0):
+		print("loading up menu.tscn")
+		TransitionScene.change_scene_instant('res://menu.tscn')

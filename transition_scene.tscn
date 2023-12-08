@@ -66,7 +66,6 @@ script = ExtResource("1_0bnhy")
 
 [node name="TransitionSceneRect" type="ColorRect" parent="."]
 top_level = true
-z_index = 4096
 z_as_relative = false
 material = SubResource("ShaderMaterial_4img1")
 anchors_preset = 15

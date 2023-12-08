@@ -37,5 +37,8 @@ func _handle_button_click():
 	#play flush sound
 	#transition scene
 	#start game
-
+func _process(delta):
+	if Input.is_key_pressed(KEY_R):
+		print("loading up menu.tscn")
+		TransitionScene.change_scene('res://menu.tscn')
 
