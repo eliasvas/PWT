@@ -16,9 +16,13 @@ texture = ExtResource("1_whqex")
 position = Vector2(527, 228)
 rotation = -1.54723
 
+[node name="WaterSprinkler4" parent="." instance=ExtResource("2_fwgpy")]
+position = Vector2(325, 201)
+rotation = 0.215203
+
 [node name="WaterSprinkler2" parent="." instance=ExtResource("2_fwgpy")]
-position = Vector2(40, 235)
-rotation = -0.924154
+position = Vector2(528, 265)
+rotation = -2.87267
 scale = Vector2(3, 3)
 
 [node name="WaterSprinkler1" parent="." instance=ExtResource("2_fwgpy")]
