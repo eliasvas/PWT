@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://b48dy7jj10mfl"]
 
 [ext_resource type="Script" path="res://custom_cursor.gd" id="1_xcmvk"]
-[ext_resource type="Texture2D" uid="uid://dmfphuuais55u" path="res://drag_cursor.png" id="2_553sf"]
+[ext_resource type="Texture2D" uid="uid://c3isi5mgidae4" path="res://cursor_idle0.png" id="2_wdjmc"]
 
 [node name="CustomCursor" type="Node2D"]
 z_as_relative = false
@@ -11,4 +11,4 @@ script = ExtResource("1_xcmvk")
 layer = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="CanvasLayer"]
-texture = ExtResource("2_553sf")
+texture = ExtResource("2_wdjmc")
