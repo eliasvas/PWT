@@ -29,6 +29,8 @@ func handle_action(action):
 		TransitionScene.fade_n_exit()
 	elif action == "ShowOptions":
 		TransitionScene.change_scene('res://menu.tscn')
+	elif action == "StartGame":
+		TransitionScene.change_scene('res://pipe_level.tscn')
 
 func _handle_button_click():
 	print("Button clicked!")
