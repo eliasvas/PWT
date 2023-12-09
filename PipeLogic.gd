@@ -26,9 +26,9 @@ func _on_spinkler_success():
 	successes_needed -= 1
 	if successes_needed == 0:
 		await get_tree().create_timer(0.5).timeout
-		TransitionScene.change_scene('res://bonk_level.tscn')
+		GameSceneLoader.load_next_scene()
 
 
 func _on_spinkler_fail():
 	await get_tree().create_timer(2).timeout
-	TransitionScene.change_scene('res://menu.tscn')
+	GameSceneLoader.load_menu()

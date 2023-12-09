@@ -29,9 +29,9 @@ func handle_action(action):
 	if action == "QuitGame":
 		TransitionScene.fade_n_exit()
 	elif action == "ShowOptions":
-		TransitionScene.change_scene('res://menu.tscn')
+		GameSceneLoader.load_menu()
 	elif action == "StartGame":
-		TransitionScene.change_scene('res://pipe_level.tscn')
+		GameSceneLoader.load_next_scene()
 
 func _handle_button_click():
 	print("Button clicked!")
@@ -43,5 +43,5 @@ func _handle_button_click():
 func _process(delta):
 	if Input.is_key_pressed(KEY_R):
 		print("loading up menu.tscn")
-		TransitionScene.change_scene('res://menu.tscn')
+		GameSceneLoader.load_menu()
 

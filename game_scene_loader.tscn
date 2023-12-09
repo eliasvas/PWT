@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://dhf8wycot1dsa"]
+
+[ext_resource type="Script" path="res://GameSceneLoader.gd" id="1_40srg"]
+[ext_resource type="Theme" uid="uid://c0vl6lqucrvs8" path="res://theme.tres" id="2_3tnqo"]
+[ext_resource type="Script" path="res://Label.gd" id="3_mvm8d"]
+
+[node name="GameSceneLoader" type="Node2D"]
+script = ExtResource("1_40srg")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 2
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+offset_left = 752.0
+offset_top = 1.0
+offset_right = 792.0
+offset_bottom = 27.0
+theme = ExtResource("2_3tnqo")
+text = "2"
+script = ExtResource("3_mvm8d")
