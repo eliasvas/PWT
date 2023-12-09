@@ -13,6 +13,9 @@ func _process(delta):
 
 
 func _on_input_event(viewport, event, shape_idx):
+	if event.is_pressed():
+		print("STAB")
+		MusicController.play_sound("res://stab.mp3")
 	if mouse_over and event.is_pressed() and event.button_index == MOUSE_BUTTON_LEFT and $RatTex.offset.y != 0:
 		rotate(90)
 		$RatTex/AnimationPlayer.stop()

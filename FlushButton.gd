@@ -25,6 +25,7 @@ func _on_gui_input(event):
 		texture = pressed_texture
 
 func handle_action(action):
+	MusicController.play_sound("res://flush.mp3")
 	if action == "QuitGame":
 		TransitionScene.fade_n_exit()
 	elif action == "ShowOptions":

@@ -17,10 +17,8 @@ offset_right = 169.0
 offset_bottom = 191.0
 scale = Vector2(2.4, 2.30532)
 
-[node name="Rat" parent="Control" instance=ExtResource("2_jvxtg")]
-visible = false
-position = Vector2(9.58333, 28.6294)
-scale = Vector2(0.208333, 0.216889)
+[node name="Rat" parent="." instance=ExtResource("2_jvxtg")]
+position = Vector2(170, 326)
 
 [connection signal="ratKilled" from="." to="." method="_on_rat_killed"]
 [connection signal="ratNotKilled" from="." to="." method="_on_rat_not_killed"]

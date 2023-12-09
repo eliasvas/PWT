@@ -15,6 +15,7 @@ func _process(delta):
 	if (time_fixing > 0.5):
 		$nut.visible = false
 		print("fixed!!")
+		MusicController.play_sound("res://drill.mp3")
 		level_ended = true
 		$CPUParticles2D.visible = false
 	if mouse_state == MOUSE_DOWN && collider_state == INSIDE_COLLIDER:
