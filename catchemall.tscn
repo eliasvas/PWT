@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://0eo26fjvsakk"]
+[gd_scene load_steps=4 format=3 uid="uid://0eo26fjvsakk"]
 
 [ext_resource type="Script" path="res://catchemall.gd" id="1_xel6p"]
+[ext_resource type="Texture2D" uid="uid://dj3bnu30r4jds" path="res://wrench_part.png" id="2_tbr3u"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_51mpy"]
 size = Vector2(338, 192.5)
@@ -13,6 +14,21 @@ script = ExtResource("1_xel6p")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Box"]
 position = Vector2(271, 314.25)
 shape = SubResource("RectangleShape2D_51mpy")
+
+[node name="WrenchPart2" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(129, 235)
+rotation = -0.139787
+scale = Vector2(1.44587, 0.910081)
+skew = -0.0364887
+texture = ExtResource("2_tbr3u")
+
+[node name="WrenchPart1" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(342, 197)
+rotation = -0.077971
+scale = Vector2(1.20312, 0.953125)
+texture = ExtResource("2_tbr3u")
 
 [connection signal="body_entered" from="Box" to="." method="_on_box_body_entered"]
 [connection signal="body_shape_entered" from="Box" to="." method="_on_box_body_shape_entered"]
