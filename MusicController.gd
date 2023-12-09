@@ -14,6 +14,12 @@ func play_music(target : String = "res://mayhem.mp3"):
 	var new_music = load(target)
 	$AudioStreamPlayer2D.stream = new_music
 	$AudioStreamPlayer2D.play()
+	$AudioStreamPlayer2D.finished.connect(_on_audio_finished)
+
+func _on_audio_finished():
+	print("Music LOOP")
+	$AudioStreamPlayer2D.stop()
+	$AudioStreamPlayer2D.play()
 
 func play_sound(target : String = "res://mayhem.mp3"):
 	var sound = sound_direct.instantiate()
