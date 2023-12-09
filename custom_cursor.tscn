@@ -1,7 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://b48dy7jj10mfl"]
+[gd_scene load_steps=3 format=3 uid="uid://dfo00wwh1x4so"]
 
 [ext_resource type="Script" path="res://custom_cursor.gd" id="1_xcmvk"]
-[ext_resource type="Texture2D" uid="uid://c3isi5mgidae4" path="res://cursor_idle0.png" id="2_wdjmc"]
+[ext_resource type="Texture2D" uid="uid://k44rl5tvggss" path="res://cursor_idle0.png" id="2_wdjmc"]
 
 [node name="CustomCursor" type="Node2D"]
 z_as_relative = false

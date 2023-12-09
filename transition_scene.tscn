@@ -76,6 +76,7 @@ grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="TransitionSceneRect"]
+speed_scale = 1.5
 libraries = {
 "": SubResource("AnimationLibrary_kk6bp")
 }

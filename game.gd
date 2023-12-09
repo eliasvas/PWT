@@ -1,7 +1,7 @@
 extends Node2D
 
 func _ready():
-	CustomCursor.load_cursor("cursor_idle", "cursor_pressed", 0.8)
+	CustomCursor.load_cursor("mouse", "mousec", 0.8)
 	TransitionScene.change_scene_instant('res://menu.tscn')
 
 

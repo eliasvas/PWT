@@ -1,6 +1,26 @@
-[gd_scene load_steps=2 format=3 uid="uid://dncsp30378q08"]
+[gd_scene load_steps=3 format=3 uid="uid://dncsp30378q08"]
 
 [ext_resource type="Script" path="res://bonk_level.gd" id="1_jw1i8"]
+[ext_resource type="PackedScene" uid="uid://dl0arrcsi4s60" path="res://rat.tscn" id="2_jvxtg"]
 
 [node name="BonkLevel" type="Node2D"]
+position = Vector2(1, 1)
 script = ExtResource("1_jw1i8")
+
+[node name="Control" type="Control" parent="."]
+clip_children = 2
+layout_mode = 3
+anchors_preset = 0
+offset_left = 129.0
+offset_top = 151.0
+offset_right = 169.0
+offset_bottom = 191.0
+scale = Vector2(2.4, 2.30532)
+
+[node name="Rat" parent="Control" instance=ExtResource("2_jvxtg")]
+visible = false
+position = Vector2(9.58333, 28.6294)
+scale = Vector2(0.208333, 0.216889)
+
+[connection signal="ratKilled" from="." to="." method="_on_rat_killed"]
+[connection signal="ratNotKilled" from="." to="." method="_on_rat_not_killed"]

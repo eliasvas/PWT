@@ -17,7 +17,6 @@ rotation = 0.215203
 [node name="WaterSprinkler2" parent="." instance=ExtResource("2_fwgpy")]
 position = Vector2(688, 166)
 rotation = -2.87267
-scale = Vector2(3, 3)
 
 [node name="WaterSprinkler1" parent="." instance=ExtResource("2_fwgpy")]
 position = Vector2(379, 249)

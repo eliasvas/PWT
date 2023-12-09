@@ -9,7 +9,7 @@ var texpress = [null, null]
 var INDEX
 
 func _ready():
-	#Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
+	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 	INDEX = 0;
 func load_cursor(idle_image_prefix : String, clicked_image_prefix : String, tex_scale : float = 1.0):
 	TexScale = tex_scale

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://0eo26fjvsakk"]
+
+[ext_resource type="Script" path="res://catchemall.gd" id="1_xel6p"]
+
+[node name="catchemall" type="Node2D"]
+script = ExtResource("1_xel6p")
