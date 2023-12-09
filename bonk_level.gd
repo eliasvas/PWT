@@ -4,7 +4,7 @@ signal ratKilled
 signal ratNotKilled
 
 var rat = preload("res://rat.tscn")
-var spawnPoints = [Vector2(180,200),Vector2(350,320),Vector2(590,490)]
+var spawnPoints = [Vector2(160,200),Vector2(320,310),Vector2(590,490)]
 var level_ended = false
 func instantiate_rat():
 	if level_ended:return;
@@ -18,6 +18,7 @@ func instantiate_rat():
 func _ready():
 	CustomCursor.load_cursor_single("screwdriver.png","screwdriver_stab.png", 1.8)
 	BackgroundImage.load_textures("bonk")
+	await get_tree().create_timer(0.5).timeout
 	instantiate_rat()
 	await get_tree().create_timer(4).timeout
 	GameSceneLoader.load_menu()
