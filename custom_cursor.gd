@@ -18,6 +18,13 @@ func load_cursor(idle_image_prefix : String, clicked_image_prefix : String, tex_
 	texidle[0] = load("res://"+idle_image_prefix + "0.png") 
 	texidle[1] = load("res://"+idle_image_prefix + "1.png") 
 	
+func load_cursor_single(idle_image : String,active_image : String, tex_scale : float = 1.0):
+	TexScale = tex_scale
+	texpress[0] = load(active_image)
+	texpress[1] = load(active_image)
+	texidle[0] = load(idle_image)
+	texidle[1] = load(idle_image)
+
 func _process(delta):
 	INDEX += delta
 	$CanvasLayer/Sprite2D.position = get_viewport().get_mouse_position()
