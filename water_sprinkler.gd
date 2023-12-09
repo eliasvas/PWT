@@ -58,6 +58,8 @@ func _on_timer_timeout():
 		print("Back to title!")
 		#send correct signals
 		$CPUParticles2D.amount *= 50.0
+		await get_tree().create_timer(randi() % 3 / 9.0).timeout
+		MusicController.play_sound("res://water.mp3")
 		#await get_tree().create_timer(2).timeout
 		#TransitionScene.change_scene('res://menu.tscn')
 		
