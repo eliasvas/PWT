@@ -1,8 +1,12 @@
 extends Area2D
-
+var killed = false
 func _ready():
-	$RatTex/AnimationPlayer.play("anim")
-	await $RatTex/AnimationPlayer.animation_finished
+	$AnimatedSprite2D.play("rise")
+	await $AnimatedSprite2D.animation_looped
+	$AnimatedSprite2D.play("stay")
+	await $AnimatedSprite2D.animation_looped
+	$AnimatedSprite2D.play_backwards("rise")
+	await $AnimatedSprite2D.animation_looped
 	$"..".emit_signal("ratNotKilled")
 	queue_free()
 
@@ -16,9 +20,10 @@ func _on_input_event(viewport, event, shape_idx):
 	if event.is_pressed():
 		print("STAB")
 		MusicController.play_sound("res://stab.mp3")
-	if mouse_over and event.is_pressed() and event.button_index == MOUSE_BUTTON_LEFT and $RatTex.offset.y != 0:
+	if mouse_over and event.is_pressed() and event.button_index == MOUSE_BUTTON_LEFT:
 		rotate(90)
-		$RatTex/AnimationPlayer.stop()
+		killed = true
+		$AnimatedSprite2D.stop()
 		$"..".emit_signal("ratKilled")
 		queue_free()
 
