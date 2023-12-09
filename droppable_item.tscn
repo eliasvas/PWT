@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://x5fpvgggg147"]
+
+[ext_resource type="Script" path="res://droppable_item.gd" id="1_1er8v"]
+[ext_resource type="Texture2D" uid="uid://d1vaka8y8ynhv" path="res://bottleg.png" id="1_osinr"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_husm2"]
+radius = 29.0
+height = 112.0
+
+[node name="DroppableItem" type="CharacterBody2D"]
+scale = Vector2(1.5, 1.5)
+script = ExtResource("1_1er8v")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_osinr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 0)
+shape = SubResource("CapsuleShape2D_husm2")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-2, 0)
+shape = SubResource("CapsuleShape2D_husm2")
+
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]

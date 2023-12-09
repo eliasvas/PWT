@@ -1,12 +1,19 @@
 [gd_scene load_steps=3 format=3 uid="uid://0eo26fjvsakk"]
 
 [ext_resource type="Script" path="res://catchemall.gd" id="1_xel6p"]
-[ext_resource type="Texture2D" uid="uid://laq4hic6xf6s" path="res://screwdriver_stab.png" id="2_ldiok"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_51mpy"]
+size = Vector2(338, 192.5)
 
 [node name="catchemall" type="Node2D"]
 script = ExtResource("1_xel6p")
 
-[node name="ScrewdriverStab2" type="Sprite2D" parent="."]
-position = Vector2(504, 537)
-scale = Vector2(2.10938, 1.875)
-texture = ExtResource("2_ldiok")
+[node name="Box" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Box"]
+position = Vector2(271, 314.25)
+shape = SubResource("RectangleShape2D_51mpy")
+
+[connection signal="body_entered" from="Box" to="." method="_on_box_body_entered"]
+[connection signal="body_shape_entered" from="Box" to="." method="_on_box_body_shape_entered"]
+[connection signal="input_event" from="Box" to="." method="_on_box_input_event"]
