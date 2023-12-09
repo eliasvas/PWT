@@ -6,6 +6,7 @@ signal spinklerFail
 # Called when the node enters the scene tree for the first time.
 var rng = RandomNumberGenerator.new()
 func _ready():
+	CustomCursor.load_cursor("tool", "toolc", 1)
 	BackgroundImage.load_textures("pipe")
 	var sprinklers = ["WaterSprinkler1","WaterSprinkler2","WaterSprinkler3"]
 	var first_to_kill = rng.randi() % 3
