@@ -21,7 +21,6 @@ func get_count():
 	return count
 
 func load_next_scene():
-	count +=1
 	var rng = RandomNumberGenerator.new()
 	var index = rng.randi() % 3
 	if index == prev_index:
@@ -29,4 +28,7 @@ func load_next_scene():
 		index = index % 3
 	prev_index = index
 	TransitionScene.change_scene(game_scenes[index])
+	#await until change scene completed
+	await get_tree().create_timer(0.8).timeout
+	count +=1
 	

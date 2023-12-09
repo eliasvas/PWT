@@ -11,10 +11,10 @@ script = ExtResource("1_40srg")
 layer = 2
 
 [node name="Label" type="Label" parent="CanvasLayer"]
-offset_left = 752.0
-offset_top = 1.0
-offset_right = 792.0
-offset_bottom = 27.0
+offset_left = 744.0
+offset_top = 508.0
+offset_right = 784.0
+offset_bottom = 597.0
 theme = ExtResource("2_3tnqo")
 text = "2"
 script = ExtResource("3_mvm8d")
