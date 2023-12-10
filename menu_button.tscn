@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://b6un04ma7loqy"]
+
+[ext_resource type="Script" path="res://menu_button.gd" id="1_fd1my"]
+[ext_resource type="Texture2D" uid="uid://pcnjwhtm8d0s" path="res://pipe_button.png" id="2_3lqkh"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kgvn4"]
+radius = 27.0185
+
+[node name="MenuButton" type="Node2D"]
+script = ExtResource("1_fd1my")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_3lqkh")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_kgvn4")
+
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]
