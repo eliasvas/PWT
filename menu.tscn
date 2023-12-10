@@ -1,62 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://jmaeldtngrr6"]
+[gd_scene load_steps=3 format=3 uid="uid://jmaeldtngrr6"]
 
 [ext_resource type="Script" path="res://menu.gd" id="1_f2tdl"]
-[ext_resource type="Theme" uid="uid://c0vl6lqucrvs8" path="res://theme.tres" id="1_jx4wi"]
-[ext_resource type="Texture2D" uid="uid://c6ngdh3rvlpqq" path="res://pommel_up.png" id="2_tvjj2"]
-[ext_resource type="Script" path="res://FlushButton.gd" id="3_l7sdb"]
+[ext_resource type="PackedScene" uid="uid://b6un04ma7loqy" path="res://menu_button.tscn" id="2_mys7n"]
 
 [node name="Menu" type="Node2D"]
 script = ExtResource("1_f2tdl")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="StartGame" parent="." instance=ExtResource("2_mys7n")]
+position = Vector2(377, 369)
 
-[node name="GridContainer" type="GridContainer" parent="CanvasLayer"]
-offset_left = 258.0
-offset_top = 187.0
-offset_right = 639.0
-offset_bottom = 381.0
-theme = ExtResource("1_jx4wi")
-columns = 2
-
-[node name="StartGame" type="TextureRect" parent="CanvasLayer/GridContainer"]
-layout_mode = 2
-texture = ExtResource("2_tvjj2")
-expand_mode = 3
-stretch_mode = 4
-script = ExtResource("3_l7sdb")
-
-[node name="Start" type="Label" parent="CanvasLayer/GridContainer"]
-layout_mode = 2
-text = "Start"
-
-[node name="ShowOptions" type="TextureRect" parent="CanvasLayer/GridContainer"]
-layout_mode = 2
-texture = ExtResource("2_tvjj2")
-expand_mode = 3
-stretch_mode = 4
-script = ExtResource("3_l7sdb")
-
-[node name="Options" type="Label" parent="CanvasLayer/GridContainer"]
-layout_mode = 2
-text = "Options"
-
-[node name="QuitGame" type="TextureRect" parent="CanvasLayer/GridContainer"]
-layout_mode = 2
-texture = ExtResource("2_tvjj2")
-expand_mode = 3
-stretch_mode = 4
-script = ExtResource("3_l7sdb")
-
-[node name="Quit" type="Label" parent="CanvasLayer/GridContainer"]
-layout_mode = 2
-text = "Quit"
-
-[connection signal="gui_input" from="CanvasLayer/GridContainer/StartGame" to="CanvasLayer/GridContainer/StartGame" method="_on_gui_input"]
-[connection signal="mouse_entered" from="CanvasLayer/GridContainer/StartGame" to="CanvasLayer/GridContainer/StartGame" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="CanvasLayer/GridContainer/StartGame" to="CanvasLayer/GridContainer/StartGame" method="_on_mouse_exited"]
-[connection signal="gui_input" from="CanvasLayer/GridContainer/ShowOptions" to="CanvasLayer/GridContainer/ShowOptions" method="_on_gui_input"]
-[connection signal="mouse_entered" from="CanvasLayer/GridContainer/ShowOptions" to="CanvasLayer/GridContainer/ShowOptions" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="CanvasLayer/GridContainer/ShowOptions" to="CanvasLayer/GridContainer/ShowOptions" method="_on_mouse_exited"]
-[connection signal="gui_input" from="CanvasLayer/GridContainer/QuitGame" to="CanvasLayer/GridContainer/QuitGame" method="_on_gui_input"]
-[connection signal="mouse_entered" from="CanvasLayer/GridContainer/QuitGame" to="CanvasLayer/GridContainer/QuitGame" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="CanvasLayer/GridContainer/QuitGame" to="CanvasLayer/GridContainer/QuitGame" method="_on_mouse_exited"]
+[node name="QuitGame" parent="." instance=ExtResource("2_mys7n")]
+position = Vector2(179, 118)

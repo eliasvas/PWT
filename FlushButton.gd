@@ -2,8 +2,8 @@ extends TextureRect
 
 
 
-var default_texture : Texture = preload("res://pommel_up.png")
-var pressed_texture : Texture = preload("res://pommel_down.png")
+var default_texture : Texture = preload("res://blood.png")
+var pressed_texture : Texture = preload("res://blood.png")
 
 var cursor = load("res://drag_cursor.png")
 
