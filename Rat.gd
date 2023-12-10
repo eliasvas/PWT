@@ -18,7 +18,7 @@ var mouse_over = false
 func _process(delta):
 	pass
 
-
+var bleed = preload("res://bleed.tscn")
 func _on_input_event(viewport, event, shape_idx):
 	if event.is_pressed():
 		print("STAB")
@@ -26,6 +26,11 @@ func _on_input_event(viewport, event, shape_idx):
 	if mouse_over and event.is_pressed() and event.button_index == MOUSE_BUTTON_LEFT:
 		killed = true
 		$AnimatedSprite2D.play("dead")
+		var bld = bleed.instantiate()
+		bld.position = Vector2(0,5)
+		bld.get_child(0).emitting = true
+		bld.get_child(1).emitting = true
+		add_child(bld)
 		$"..".emit_signal("ratKilled")
 
 
