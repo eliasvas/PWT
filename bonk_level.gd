@@ -20,8 +20,11 @@ func _ready():
 	BackgroundImage.load_textures("bonk")
 	await get_tree().create_timer(0.5).timeout
 	instantiate_rat()
-	await get_tree().create_timer(4).timeout
-	GameSceneLoader.load_menu()
+	await get_tree().create_timer(3.5).timeout
+	if !level_ended:
+		MusicController.play_sound("res://evil_laugh.mp3")
+		await get_tree().create_timer(0.5).timeout
+		GameSceneLoader.load_menu()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
